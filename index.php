@@ -1,14 +1,27 @@
 <?php
 
-	 require_once "FFmpegAutoloader.php";
+	require_once "FFmpegAutoloader.class.php";
 
-	 \Phpffmpeg\FFmpegAutoloader::register();
+	\Phpffmpeg\FFmpegAutoloader::register();
 
-	 $move=new \Phpffmpeg\adapter\ffmpeg_movie('../test.mp4',true);
+	$movie=new \Phpffmpeg\adapter\ffmpeg_movie('../test.mp4',true);
 
-	 $duration=$move->getDuration();
+	$duration=$movie->getDuration();
+ 	$framenum=$movie->getFrameCount();
+	$name=$movie->getFilename();
+	$width=$movie->getFrameWidth();
+	$height=$movie->getFrameHeight();
+	$comment=$movie->getVideoCodec();
 
-	 var_dump($duration);
-	// exec('ffmpeg -version',$arr,$state);
-	// print_r($state);
+	$frame =$movie->getFrame(6);
+	$frame->resize(400,400,20,20,20,50);
+	$img=$frame->toGDImage();
+	imagejpeg($img,'my.jpeg');
+	imagedestroy($img);
+	 
+ 	var_dump($duration).'<br>';
+ 	var_dump($framenum).'<br>';
+ 	var_dump($name)."<br>";
+ 	var_dump($width.'*'.$height);
+ 	var_dump($comment);
 ?>
