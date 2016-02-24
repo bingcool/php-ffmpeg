@@ -5,7 +5,8 @@ Phpffmpeg这个模块是基于php5写的，定义了许多可以处理的视频A
 
 用法
 
-模块已经实现了命名空间与require的映射结合,利用php5的命名空间和自动加载可以很方便地使用。在项目中要建立一个名为Phpffmpeg（名称不能改，因为要与文件定义的根命名空间对应相同）的空的文件夹，把文件下载后，将里面的文件复制至新建的Phpffmpeg文件夹下。
+模块已经实现了命名空间与require的映射结合,利用php5的命名空间和自动加载可以很方便地使用。
+在项目中要建立一个名为Phpffmpeg（名称不能改，因为要与文件定义的根命名空间对应相同）的空的文件夹，把文件下载后，将里面的文件复制至新建的Phpffmpeg文件夹下。
 
 首先要导入 FFmpegAutoloader.class.php ,在执行静态的register()注册方法
 	require_once "path/FFmpegAutoloader.class.php";
@@ -13,7 +14,9 @@ Phpffmpeg这个模块是基于php5写的，定义了许多可以处理的视频A
 
 这个path是新建Phpffmpeg文件的路径。
 
-其实将FFmpegAutoloader文件命名成带有class的形式，如FFmpegAutoloader.class.php，是为了兼容在thinkphp3.2以上框架的命名空间加载。所以如果实在tp3.2以上的的框架中使用该模块的话，同样，需要在核心框架library中新建Phpffmpeg文件夹，将下载的文件全部复制至Phpffmpeg文件夹中。那么在Controller中使用的话，就不需要require_once了，直接执行
+其实将FFmpegAutoloader文件命名成带有class的形式，如FFmpegAutoloader.class.php，是为了兼容在thinkphp3.2以上框架的命名空间加载。
+所以如果实在tp3.2以上的的框架中使用该模块的话，同样，需要在核心框架library中新建Phpffmpeg文件夹，
+将下载的文件全部复制至Phpffmpeg文件夹中。那么在Controller中使用的话，就不需要require_once了，直接执行
 
 	\Phpffmpeg\FFmpegAutoloader::register();
 
