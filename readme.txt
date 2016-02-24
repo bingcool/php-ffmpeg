@@ -94,7 +94,7 @@ ffmpeg_frame部分
 
 返回一个dg对象
 
-例如
+例如:
 
 	$frame = $movie->getFrame(6);//返回ffmpeg_frame的对象
 	$frame->resize(400,400,20,20,20,50);
