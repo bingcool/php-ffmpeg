@@ -2,7 +2,7 @@
 /**
  * ffmpeg_animated_gif serves as a compatiblity adapter for old ffmpeg-php extension
  * 
- * @author char0n (Vladimír Gorej, gorej@codescale.net)
+ * @author huandzengbing
  * @package FFmpegPHP
  * @subpackage adapter
  * @link http://ffmpeg-php.sourceforge.net/doc/api/ffmpeg_animated_gif.php
@@ -10,6 +10,10 @@
  * @version 2.6
  */
 namespace Phpffmpeg\adapter;
+
+use Phpffmpeg\FFmpegAnimatedGif;
+use Phpffmpeg\FFmpegFrame;
+
 
 class ffmpeg_animated_gif {
 

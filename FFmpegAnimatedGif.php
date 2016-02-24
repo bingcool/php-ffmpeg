@@ -8,13 +8,14 @@
  * 
  * Code fragments used from:  GIFEncoder Version 2.0 by László Zsidi
  * 
- * @author char0n (Vladimír Gorej, gorej@codescale.net)
+ * @author huangzengbing
  * @package FFmpegPHP
  * @license New BSD 
  * @version 2.6
  */
 
 namespace Phpffmpeg;
+use Serializable;
 
 class FFmpegAnimatedGif implements Serializable {
 

@@ -2,7 +2,7 @@
 /**
  * StringOutputProvider ffmpeg provider implementation
  * 
- * @author funrob (Rob Walch, rwalch@gmail.com)
+ * @author huandzengbing
  * @package FFmpegPHP
  * @subpackage provider
  * @license New BSD

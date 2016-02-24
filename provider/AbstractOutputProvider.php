@@ -2,7 +2,7 @@
 /**
  * AbstractOutputProvider parent of all output providers
  * 
- * @author char0n (Vladimír Gorej, gorej@codescale.net)
+ * @author huangzengbing
  * @package FFmpegPHP
  * @subpackage provider
  * @abstract
@@ -11,7 +11,7 @@
  */
 
 namespace Phpffmpeg\provider;
-
+use Serializable;
 abstract class AbstractOutputProvider implements OutputProvider, Serializable {
 
     protected static $EX_CODE_FILE_NOT_FOUND = 334561;

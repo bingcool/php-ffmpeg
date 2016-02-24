@@ -2,7 +2,7 @@
 /**
  * FFmpegOutputProvider ffmpeg provider implementation
  * 
- * @author char0n (Vladimír Gorej, gorej@codescale.net)
+ * @author huandzengbing
  * @package FFmpegPHP
  * @subpackage provider
  * @license New BSD
@@ -10,7 +10,7 @@
  */
 
 namespace Phpffmpeg\provider;
-
+use Exception;
 class FFmpegOutputProvider extends AbstractOutputProvider {
 	
     protected static $EX_CODE_NO_FFMPEG = 334560;

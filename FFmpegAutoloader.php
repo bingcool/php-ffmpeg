@@ -7,7 +7,7 @@
  * @license New BSD
  * @version 2.6
  */
-namespace Phpffmpeg
+namespace Phpffmpeg;
 
 class FFmpegAutoloader {
     /**
@@ -20,22 +20,20 @@ class FFmpegAutoloader {
     private $prefixLength;
 
     public function __construct($baseDirectory = __DIR__) {
-        // 当前所在的文件夹路径
+         // 当前所在的文件夹路径
         $this->directory = $baseDirectory;
         // 当前命名空间
         $this->prefix = __NAMESPACE__.'\\';
         // 当前命名空间的字符串数
         $this->prefixLength = strlen($this->prefix);
-
     }
-
     /**
      * Autoloading mechanizm
      * 
      * @param string $className 
      * @return boolean
      */
-    public static function autoload($className) {
+    public function autoload($className) {
         // new \Phpffmpeg\...
         // 判断如果以\命名空间访问的格式符合
         if (0 === strpos($className, $this->prefix)) {
@@ -52,13 +50,13 @@ class FFmpegAutoloader {
     /**
      * Registering autoloading mechanizm
      */     
-    public static function register() {
+    public static function register($prepend=false) { 
         if (function_exists('__autoload')) {        
             trigger_error('FFmpegPHP uses spl_autoload_register() which will bypass your __autoload() and may break your autoloading', E_USER_WARNING);    
-        } else {        
-            spl_autoload_register(array('FFmpegAutoloader', 'autoload'));
+        } else {     
+            // spl_autoload_register(array('FFmpegAutoloader', 'autoload'));
             //spl_autoload_register(array('class_name','function')),即是那个类的function
+            spl_autoload_register(array(new self(), 'autoload'), true, $prepend);
         }
     }
 }
-// FFmpegAutoloader::register();//相当于创建一个实例new,索引include这个class进去时就已经创建实例了

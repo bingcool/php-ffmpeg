@@ -2,14 +2,17 @@
 /**
  * FFmpegMovie represents a movie file
  * 
- * @author char0n (Vladimír Gorej, gorej@codescale.net)
+ * @author huangzengbing
  * @package FFmpegPHP
  * @license New BSD
  * @version 2.6
  */
 
 namespace Phpffmpeg;
-
+use Serializable;
+use Exception;
+use Phpffmpeg\provider\FFmpegOutputProvider;
+use Phpffmpeg\provider\OutputProvider;
 class FFmpegMovie implements Serializable {
 
     protected static $REGEX_DURATION          = '/Duration: ([0-9]{2}):([0-9]{2}):([0-9]{2})(\.([0-9]+))?/';

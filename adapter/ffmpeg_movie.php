@@ -2,7 +2,7 @@
 /**
  * ffmpeg_movie serves as a compatiblity adapter for old ffmpeg-php extension
  * 
- * @author char0n (Vladimír Gorej, gorej@codescale.net)
+ * @author huandzengbing
  * @package FFmpegPHP
  * @subpackage adapter
  * @link http://ffmpeg-php.sourceforge.net/doc/api/ffmpeg_movie.php
@@ -11,6 +11,9 @@
  */
 
 namespace Phpffmpeg\adapter;
+
+use Phpffmpeg\FFmpegMovie;
+use Phpffmpeg\provider\FFmpegOutputProvider;
 
 class ffmpeg_movie {
 
