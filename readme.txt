@@ -1,11 +1,11 @@
 前言
-Phpffmpeg这个模块是基于html5写的，定义了许多可以处理的视频API。
+Phpffmpeg这个模块是基于php5写的，定义了许多可以处理的视频API。
 
 可以参考：http://ffmpeg-php.sourceforge.net/doc/api/ffmpeg_frame.php
 
 用法
 
-模块已经实现了命名空间与require的映射结合,利用html5的命名空间和自动加载可以很方便地使用。在项目中要建立一个名为Phpffmpeg（名称不能改，因为要与文件定义的根命名空间对应相同）的空的文件夹，把文件下载后，将里面的文件复制至新建的Phpffmpeg文件夹下。
+模块已经实现了命名空间与require的映射结合,利用php5的命名空间和自动加载可以很方便地使用。在项目中要建立一个名为Phpffmpeg（名称不能改，因为要与文件定义的根命名空间对应相同）的空的文件夹，把文件下载后，将里面的文件复制至新建的Phpffmpeg文件夹下。
 
 首先要导入 FFmpegAutoloader.class.php ,在执行静态的register()注册方法
 	require_once "path/FFmpegAutoloader.class.php";
