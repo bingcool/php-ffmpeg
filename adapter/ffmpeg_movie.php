@@ -18,9 +18,12 @@ use Phpffmpeg\provider\FFmpegOutputProvider;
 class ffmpeg_movie {
 
     protected $adaptee;
-    
+    protected $moviePath;
+    protected $commend = 'ffmpeg';
+
     public function __construct($moviePath, $persistent = false) {
-        $this->adaptee = new FFmpegMovie($moviePath, new FFmpegOutputProvider('ffmpeg', $persistent));
+        $this->adaptee = new FFmpegMovie($moviePath, new FFmpegOutputProvider($this->commend, $persistent));
+        $this->moviePath = $moviePath;
     }
     
     public function getDuration() {
@@ -143,7 +146,56 @@ class ffmpeg_movie {
         }
         
         return $toReturn;
-    }    
+    } 
+
+    public function getSize() {
+        return ceil(sprintf("%u",filesize($this->moviePath)) / 1024);
+    }
+
+    public function getImage($savePath,$second,$width,$height) {
+        if($savePath && $second && $width && $height){
+            $second = (int) $second;
+            $width = (int) $width;
+            $height = (int) $height;
+            if($second > ($this->getDuration()-2)) {
+                die("startsecond is over video duration!");
+            }
+            exec($this->commend.' -i '.$this->moviePath.' -y -f image2 -ss '.$second.' -t 0.001 -s '.$width.'x'.$height.' '.$savePath,$out,$status);
+            if($status==0) {
+                return true;
+            }else {
+                return false;
+            }
+        
+        }else {
+            die("four params is not set!");
+        }
+        
+    }
+
+    public function getGif($savePath,$startsecond,$lastsecond,$width,$height) {
+        if($savePath && $startsecond && $lastsecond && $width && $height){
+            $startsecond = (int) $startsecond;
+            $lastsecond = (int) $lastsecond;
+            $width = (int) $width;
+            $height = (int) $height;
+            if($startsecond > ($this->getDuration()-2)) {
+                die("startsecond is over video duration!");
+            }else if(($startsecond+$lastsecond) > ($this->getDuration()-2)) {
+                die("startsecond+lastsecond is over video duration!");
+            }
+            exec($this->commend.' -i '.$this->moviePath.' -y -f gif -ss '.$startsecond.' -t '.$lastsecond.' -s '.$width.'x'.$height.' -pix_fmt rgb24 '.$savePath,$out,$status);
+            if($status==0) {
+                return true;
+            }else {
+                return false;
+            }
+        
+        }else {
+            die("five params is not set!");
+        }
+        
+    }
     
     public function __clone() {
         $this->adaptee = clone $this->adaptee;

@@ -13,6 +13,7 @@ use Serializable;
 use Exception;
 use Phpffmpeg\provider\FFmpegOutputProvider;
 use Phpffmpeg\provider\OutputProvider;
+
 class FFmpegMovie implements Serializable {
 
     protected static $REGEX_DURATION          = '/Duration: ([0-9]{2}):([0-9]{2}):([0-9]{2})(\.([0-9]+))?/';

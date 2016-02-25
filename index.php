@@ -5,6 +5,18 @@
 	\Phpffmpeg\FFmpegAutoloader::register();
 
 	$movie=new \Phpffmpeg\adapter\ffmpeg_movie('../test.mp4',true);
+	
+	
+   	$size = $movie->getSize();
+
+
+   	// $image = $movie->getImage('my1.jpg',6,1000,1000);
+   	
+   	$gif = $movie->getGif('uu.gif',40,5,300,300);
+   	
+   	echo $size;
+
+
 
 	$duration=$movie->getDuration();
  	$framenum=$movie->getFrameCount();
