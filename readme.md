@@ -75,21 +75,21 @@ Returns the next key frame from the movie as an ffmpeg_frame object. Returns fal
 获取视频的大小,单位kb
 
 （15）$movie->getImage($savePath,$second,$width,$height);
-获取视频的某个时间的帧图片（关键帧）
-$savePath 图片保存的路径,包含图片的名称。例如path/my.jpg;
-$second 视频对应的秒数，int。
-$width  图片的宽度,int。
-$height 图片的高度,int。
+获取视频的某个时间的帧图片（关键帧）＜/br＞
+$savePath 图片保存的路径,包含图片的名称。例如path/my.jpg;＜/br＞
+$second 视频对应的秒数，int。＜/br＞
+$width  图片的宽度,int。＜/br＞
+$height 图片的高度,int。＜/br＞
 
 执行此函数成功时返回true,失败返回false。
 
 （16）$movie->getGif($savePath,$startsecond,$lastsecond,$width,$height);
-截取视频的某个时间开始至某个时间的gif动态图。
-$savePath 图片保存的路径,包含图片的名称。例如path/my.gif;
-$startsecond 视频开始秒数，int。
-$lastsecond 持续的秒数，即gif的时长。
-$width  gif的宽度,int。
-$height gif的高度,int。
+截取视频的某个时间开始至某个时间的gif动态图。＜/br＞
+$savePath 图片保存的路径,包含图片的名称。例如path/my.gif;＜/br＞
+$startsecond 视频开始秒数，int。＜/br＞
+$lastsecond 持续的秒数，即gif的时长。＜/br＞
+$width  gif的宽度,int。＜/br＞
+$height gif的高度,int。＜/br＞
 
 执行此函数成功时返回true,失败返回false。
 
