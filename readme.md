@@ -94,7 +94,6 @@ $height gif的高度,int。
 执行此函数成功时返回true,失败返回false。
 
 
-
 ffmpeg_frame部分
 
 （1）$frame = new ffmpeg_frame(Resource gd_image);
