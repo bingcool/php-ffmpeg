@@ -1,5 +1,6 @@
 前言
-Phpffmpeg这个模块是基于php5写的，定义了许多可以处理的视频API。
+
+Phpffmpeg这个模块是基于php5写的，定义了许多可以处理的视频API，同时既可以根据实际需要不断拓展API。
 
 可以参考：http://ffmpeg-php.sourceforge.net/doc/api/ffmpeg_frame.php
 
