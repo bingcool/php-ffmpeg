@@ -5,7 +5,7 @@ Phpffmpeg这个模块是基于php5写的，定义了许多可以处理的视频A
 可以参考：http://ffmpeg-php.sourceforge.net/doc/api/ffmpeg_frame.php
 
 用法
-
+第一种方式：
 模块已经实现了命名空间与require的映射结合,利用php5的命名空间和自动加载可以很方便地使用。
 在项目中要建立一个名为Phpffmpeg（名称不能改，因为要与文件定义的根命名空间对应相同）的空的文件夹，把文件下载后，将里面的文件复制至新建的Phpffmpeg文件夹下。
 
@@ -22,6 +22,9 @@ Phpffmpeg这个模块是基于php5写的，定义了许多可以处理的视频A
 	\Phpffmpeg\FFmpegAutoloader::register();
 
 这样已经实现了自动加载和自动注册功能，因为tp自动的自动加载功能会先执行require_once将文件包含进来。
+
+第二种方式：
+最近引入了一个composer的psr4自动加载的，在使用中，直接include "./vendor/autoload.php",这个也是完成命名空间的自动加载的注册，不需要再引入FFmpegAutoloader.class.php
 
 API详解
 
