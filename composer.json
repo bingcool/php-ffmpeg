@@ -1,0 +1,27 @@
+{
+	"name":            "bingcool/php-ffmpeg",
+	"description":     "php call cli to handle the videos and audio",
+    "keywords":         ["php", "ffmpeg", "videos","audio"],
+    "time":             "2017-08-01",
+    "license":          "MIT",
+    "type":             "project",
+    "authors": [{
+        "name":         "bingcool",
+        "email":        "bingcoolhuang@gmail.com",
+        "role":         "Engineer of php"
+    }],
+    "require": {
+        
+    },
+    "autoload":{
+	    "psr-4":{
+	        "Phpffmpeg\\":""
+	    }
+	},
+	"repositories": {
+		"packagist": {
+			"type": "composer",
+			"url": "https://packagist.phpcomposer.com"
+		}
+	}
+}
